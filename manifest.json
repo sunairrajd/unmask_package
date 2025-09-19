@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Unmask - Privacy Policy Analyzer",
+  "version": "1.0",
+  "description": "We snoop on extensions before they snoop on you.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://microsoftedge.microsoft.com/*",
+    "*://*.cloudfunctions.net/*",
+    "*://*.run.app/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://microsoftedge.microsoft.com/addons/detail/*"],
+      "js": ["config.js", "content-script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Privacy Policy Analyzer"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
